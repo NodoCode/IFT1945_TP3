@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFT1945 — Travail Pratique 3</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/code-solid-full.svg" type="svg">
+</head>
+<body>
+    <header>
+        <div class="header-text">
+            <h1>IFT1945 — Travail Pratique #3</h1>
+            <p>Interactivité et Style Dynamique — HTML5, CSS3 et JavaScript</p>
+        </div>
+        <a class="icon-wrapper" href="../../index.html">
+            <i class="fa-solid fa-code head-icon"></i>
+        </a>
+    </header>
+
+    <nav>
+        <a href="exercice1.html">Exercice 1 : Calculatrice</a>
+        <a href="exercice2.html">Exercice 2 : Studio de Design</a>
+    </nav>
+
+    <main>
+        <canvas id="bg-canvas"></canvas>
+        <div class="title-box">
+            <h2>Calculatrice</h2>
+        </div>
+        <div class="base-box">
+            <h3>Nombres entrants</h3>
+
+            <fieldset>
+                <label for="nombre1">Nombre 1 :</label>
+                <input type="text" id="nombre1" name="nombre1" placeholder=" " class="calc-inp">
+
+                <label for="nombre2">Nombre 2 :</label>
+                <input type="" id="nombre2" name="nombre2" placeholder=" " class="calc-inp">
+            </fieldset>
+
+            <h3>Résultats</h3>
+
+            <fieldset>
+                <label for="somme">Somme :</label>
+                <output type="text" id="somme" name="somme" placeholder="Somme" class="calc-out">0</output>
+
+                <label for="difference">Différence :</label>
+                <output type="text" id="difference" name="difference" placeholder="Différence" class="calc-out">0</output>
+
+                <label for="produit">Produit :</label>
+                <output type="text" id="produit" name="produit" placeholder="Produit" class="calc-out">0</output>
+
+                <label for="quotient">Quotient :</label>
+                <output type="text" id="quotient" name="quotient" placeholder="Quotient" class="calc-out">0</output>
+            </fieldset>
+
+            <div class="calc-boutons">
+                <button onclick="calculer()">Calculer</button>
+                <button onclick="effacer()">Effacer</button>
+            </div>
+            
+            
+        </div>
+    </main>
+
+    <script src="../js/global.js"></script>
+    <footer>
+        <p>
+            <i class="fa-regular fa-copyright"></i>
+            IFT1945 &mdash; Université de Montréal
+        </p>
+    </footer>
+
+</body>
+</html>

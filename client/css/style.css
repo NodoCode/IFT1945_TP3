@@ -22,10 +22,18 @@ header h1 {
     font-size: 1.8rem;
 }
 
+h3 {
+    color: #444;
+}
+
 header p {
     font-size: 0.95rem;
     margin-top: 4px;
     opacity: 0.85;
+}
+
+header a{
+    text-decoration: none;
 }
 
 header .icon-wrapper {
@@ -54,7 +62,8 @@ nav {
     padding: 0 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 0px;
 }
 
 nav a {
@@ -71,6 +80,8 @@ nav a:hover {
 }
 
 main {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,10 +90,94 @@ main {
     gap: 24px;
 }
 
+
+
+main > *:not(#bg-canvas) {
+    position: relative;
+    z-index: 1;
+}
+
 main h2 {
     font-size: 1.6rem;
     color: #444;
     padding-bottom: 20px;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    width: 90%;
+    gap: 30px 20px;
+    padding: 50px;
+    margin: 0px 0px 30px 0px;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #444;
+}
+
+label{
+    margin: 0px;
+}
+
+.calc-inp{
+    margin: 0px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.calc-out{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.calc-boutons {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.calc-boutons button {
+    padding: 20px 60px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s, color 0.2s;
+}
+
+.calc-boutons button:active {
+    transform: scale(0.97);
+}
+
+.calc-boutons button:hover {
+    background-color: #1a73e8;
+    color: #ffffff;
+}
+
+.base-box{
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px 40px;
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column; /* empile verticalement */
+    align-items: center;    /* centre chaque enfant horizontalement */
+    gap: 12px;  
 }
 
 .cards {
@@ -93,6 +188,8 @@ main h2 {
 }
 
 .card {
+    position: relative;
+    overflow: hidden;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -102,9 +199,24 @@ main h2 {
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     transition: box-shadow 0.2s;
     display: flex;
-    flex-direction: column; /* empile h3, p, icône, bouton verticalement */
-    align-items: center;    /* centre chaque enfant horizontalement */
-    gap: 12px;              /* espace uniforme entre chaque enfant */
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-canvas {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.card > *:not(.card-canvas) {
+    position: relative;
+    z-index: 1;
 }
 
 .card .icon-wrapper {
@@ -125,6 +237,28 @@ main h2 {
     60%  { transform: rotate(-10deg); }
     80%  { transform: rotate(10deg); }
     100% { transform: rotate(0deg); }
+}
+
+#bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.title-box{
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.title-box h2{
+    padding: 0px;
 }
 
 .card .card-icon {
@@ -168,9 +302,8 @@ main h2 {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 60px;
     font-size: 0.8rem;
     color: #999;
     border-top: 1px solid #ddd;
-    margin-top: 40px;
 }
