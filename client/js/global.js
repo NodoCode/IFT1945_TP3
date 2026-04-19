@@ -63,4 +63,22 @@ function effacer() {
     document.getElementById('quotient').value   = '0';
 }
 
+// Pour l'exercice 2
+
+function appliquerChangements() {
+    const carre = document.getElementById('carre');
+
+    const message = document.getElementById('message').value;
+    if (message !== '') {
+        carre.innerText = message;
+    }
+
+    const couleur = document.getElementById('couleur').value;
+    if (couleur !== '') {
+        carre.style.backgroundColor = couleur;
+    }
+
+    const taille = document.getElementById('taille').value;
+    carre.style.fontSize = taille + 'px';
+}
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFT1945 — Travail Pratique 3</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../images/code-solid-full.svg" type="svg">
+</head>
+<body>
+    <header>
+        <div class="header-text">
+            <h1>IFT1945 — Travail Pratique #3</h1>
+            <p>Interactivité et Style Dynamique — HTML5, CSS3 et JavaScript</p>
+        </div>
+        <a class="icon-wrapper" href="../../index.html">
+            <i class="fa-solid fa-code head-icon"></i>
+        </a>
+    </header>
+
+    <nav>
+        <a href="exercice1.html">Exercice 1 : Calculatrice</a>
+        <a href="exercice2.html">Exercice 2 : Studio de Design</a>
+    </nav>
+
+    <main class="design-main">
+        
+        <div id="carre">Texte initial</div>
+
+        <form class="design-form" onsubmit="return false;">
+            <fieldset>
+                <legend>Studio de design</legend>
+
+                <label for="message">Message :</label>
+                <input type="text" id="message" placeholder="Votre texte...">
+
+                <label for="couleur">Couleur de fond :</label>
+                <select id="couleur">
+                    <option value="">-- Choisir --</option>
+                    <option value="rgb(220, 53, 69)">Rouge</option>
+                    <option value="rgb(40, 167, 69)">Vert</option>
+                    <option value="rgb(26, 115, 232)">Bleu</option>
+                </select>
+
+                <label for="taille">Taille de la police : <span id="taille-valeur">16</span>px</label>
+                <input type="range" id="taille" min="10" max="60" value="16"
+                       oninput="document.getElementById('taille-valeur').innerText = this.value">
+
+                <button type="button" onclick="appliquerChangements()">Appliquer</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <script src="../js/global.js"></script>
+    <footer>
+        <p>
+            <i class="fa-regular fa-copyright"></i>
+            IFT1945 &mdash; Université de Montréal
+        </p>
+    </footer>
+
+</body>
+</html>
